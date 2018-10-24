@@ -42,17 +42,32 @@ void date_::print()
 	cout << month << "." << year;
 }
 
-bool operator&&(const date_ & d, const date_ & m)
+bool operator>(const date_ & d, const date_ & m)
 {
-	return d.getDay()==1 && m.getMonth()==1 ;
+	return d.getDay()>m.getMonth();
 }
 
-bool operator||(const date_ & d, const date_ & m)
+bool operator>=(const date_ & d, const date_ & m)
 {
-	return d.getDay() == 1 || m.getMonth() == 1;
+	return d.getDay() >= m.getMonth();
+}
+
+bool operator<(const date_ & d, const date_ & m)
+{
+	return d.getDay()< m.getMonth();
+}
+
+bool operator<=(const date_ & d, const date_ & m)
+{
+	return d.getDay() <= m.getMonth();
+}
+
+bool operator==(const date_ & d, const date_ & m)
+{
+	return d.getDay() == m.getMonth();
 }
 
 bool operator!=(const date_ & d, const date_ & m)
 {
-	return d.getDay()!=1;
+	return d.getDay() != m.getMonth();
 }

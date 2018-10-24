@@ -20,7 +20,9 @@ public:
 	void print();
 	
 };
-bool operator&&(const date_&d, const date_&m);
-bool operator||(const date_&d, const date_&m);
+bool operator>(const date_&d, const date_&m);
+bool operator>= (const date_&d, const date_&m);
+bool operator<(const date_&d, const date_&m);
+bool operator<=(const date_&d, const date_&m);
+bool operator==(const date_&d, const date_&m);
 bool operator!=(const date_&d, const date_&m);
-
