@@ -1,4 +1,4 @@
-#include "date_.h"
+﻿#include "date_.h"
 
 date_::date_(int day, int month, int year)
 {
@@ -246,7 +246,6 @@ date_ date_::operator++(int)
 
 	return tmp;
 }
-
 date_::~date_()
 {
 	delete day;
