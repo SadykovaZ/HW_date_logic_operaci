@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 using namespace std;
 
@@ -22,9 +22,11 @@ public:
 	void print() const;
 	//copy
 	date_(const date_ &obj);
-	//присваивание
+	//РїСЂРёСЃРІР°РёРІР°РЅРёРµ
+
 	date_ &operator=(const date_&obj);
-	//перемещение
+	//РїРµСЂРµРјРµС‰РµРЅРёРµ
+
 	date_(date_&&obj);
 	date_ & operator=(date_&&obj);
 
