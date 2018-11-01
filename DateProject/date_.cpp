@@ -2,33 +2,37 @@
 
 date_::date_(int day, int month, int year)
 {
+	this->day = new int;
+	this->year = new int;
+	this->month = new int;
+
 	setDay(day);
 	setMonth(month);
 	setYear(year);
 }
 void date_::setDay(int day)
 {
-	this->day = new int(day);
+	
 	if (day < 1 || day>31)
 		day = 1;
-	else
-		day = day;
+	
+	*this->day = day;
 }
 void date_::setMonth(int month)
 {
-	this->month = new int(month);
+	
 	if (month < 1 || month>12)
 		month = 1;
-	else
-		month = month;
+	
+	*this->month = month;
 }
 void date_::setYear(int year)
 {
-	this->year = new int(year);
+	
 	if (year < 1970)
 		year = 1970;
-	else
-		year = year;
+	
+	*this->year = year;
 }
 void date_::print() const
 {
@@ -227,30 +231,24 @@ date_ & date_::operator/=(int number)
 }
 date_ & date_::operator++()
 {
-	*this->day++;
-	*this->month++;
-	*this->year++;
+	(*this->day)++;
 	return *this;
 }
 date_ date_::operator++(int)
 {
-	date_ tmp;
+	date_ tmp(*this);	
 	*tmp.day = *this->day;
-	*this->day++;
-
-	*tmp.month = *this->month;
-	*this->month++;
-
-	*tmp.year = *this->year;
-	*this->year++;
-
+	(*this->day)++;
 	return tmp;
 }
 date_::~date_()
 {
-	delete day;
-	delete month;
-	delete year;
+	if (this->day != nullptr)
+		delete day;
+	if (this->month != nullptr)
+		delete month;
+	if (this->year != nullptr)
+		delete year;
 }
 
 date_::operator int()
